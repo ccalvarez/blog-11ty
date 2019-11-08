@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="ccalvarez">
+  </head>
+  <body>
+    {# {% set username = 'Carolina' %} #}
+    {% set posts = [
+      {
+        id: 1,
+        title: 'First Title'
+      }, {
+        id: 2,
+        title: 'Second Title'
+      }
+    ] %}
+    {% if username %}
+      <h1>Hello,
+        {{ username }}</h1>
+    {% else %}
+      <h1>Hello, unknown!</h1>
+    {% endif %}
+
+    <ul>
+      {% for post in posts %}
+        <li>{{ post.title }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
